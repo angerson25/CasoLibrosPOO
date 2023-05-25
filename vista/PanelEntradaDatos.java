@@ -92,6 +92,63 @@ public class PanelEntradaDatos extends JPanel{
         this.setBorder(borde);
     }
 
+    //----------------------
+    // Metodos
+    //----------------------
+    public String getTitulo()
+    {
+        return txtTitulo.getText();
+    }
+
+    public String getAutor()
+    {
+        return txtAutor.getText();
+    }
+
+    public Integer getAnioEdicion()
+    {
+        return Integer.parseInt(txtAnioEdicion.getText());
+    }
+
+    public boolean getLujo()
+    {
+        return chkLujo.isSelected();
+    }
+
+    public void limpiar()
+    {
+        txtTitulo.setText("");
+        txtAutor.setText("");
+        txtAnioEdicion.setText("");
+        chkLujo.setSelected(false);
+    }
+
+    //setter
+    public void setTitulo(String pTitulo)
+    {
+        txtTitulo.setText(pTitulo);
+    }
+
+    public void setAutor(String pAutor)
+    {
+        txtAutor.setText(pAutor);
+    }
+
+    public void setAnioEdicion(String pAnioEdicion)
+    {
+        txtAnioEdicion.setText(pAnioEdicion);
+    }
+
+    public void setLujo(boolean pLujo)
+    {
+        chkLujo.setSelected(pLujo);
+    }
+
+
+
+
+
+
     public void agregarOyentesBotones(ActionListener pAL)
     {
         btnAgregar.addActionListener(pAL);

@@ -1,5 +1,6 @@
 package controlador;
 
+import modelo.Coleccion;
 import modelo.Libro;
 import vista.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +14,7 @@ public class Controlador implements ActionListener
     //----------------------
     private VentanaPrincipal miVentana;
     private Libro miLibro;
+    private Coleccion miColeccion;
     
     //----------------------
     // Metodos
@@ -30,6 +32,32 @@ public class Controlador implements ActionListener
     public void actionPerformed(ActionEvent ae) 
     {
         String comando = ae.getActionCommand();
+
+        if(comando.equals("Agregar"))
+        {   
+            miLibro.setTitulo(miVentana.miPanelEntradaDatos.getTitulo());
+            miLibro.setAutor(miVentana.miPanelEntradaDatos.getAutor());
+            miLibro.setAnioEdicion(miVentana.miPanelEntradaDatos.getAnioEdicion());
+            miLibro.setLujo(miVentana.miPanelEntradaDatos.getLujo());
+
+
+
+
+            miVentana.miPanelResultados.mostrarResultado(miLibro.toString());
+
+            
+            miColeccion.agregarLibro(miLibro);
+        }
+        
+        if(comando.equals("Limpiar"))
+        {
+            miVentana.miPanelEntradaDatos.limpiar();
+        }
+
+        if(comando.equals("Salir"))
+        {
+            System.exit(0);
+        }
 
         
 

@@ -1,10 +1,14 @@
 package modelo;
 
+import java.util.ArrayList;
+
+
 public class Coleccion extends Libro
 {
     //Atributos
     protected int numeroDeColeccion;
     protected String nombre;
+    protected ArrayList coleccion;
 
     //Constructor
     public Coleccion(String titulo, String autor, int anioEdicion, Boolean lujo, int numeroDeColeccion, String nombre)
@@ -12,6 +16,7 @@ public class Coleccion extends Libro
         super(titulo, autor, anioEdicion, lujo);
         this.numeroDeColeccion = numeroDeColeccion;
         this.nombre = nombre;
+        coleccion = new ArrayList();
     }
 
     //Getters
@@ -37,6 +42,12 @@ public class Coleccion extends Libro
     public void setNombre(String nombre)
     {
         this.nombre = nombre;
+    }
+
+    //Metodos
+    public void agregarLibro(Libro libro)
+    {
+        coleccion.add(libro);
     }
 
 
