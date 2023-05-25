@@ -11,44 +11,23 @@ public class Coleccion extends Libro
     protected ArrayList coleccion;
 
     //Constructor
-    public Coleccion(String titulo, String autor, int anioEdicion, Boolean lujo, int numeroDeColeccion, String nombre)
+    public Coleccion()
     {
-        super(titulo, autor, anioEdicion, lujo);
-        this.numeroDeColeccion = numeroDeColeccion;
-        this.nombre = nombre;
         coleccion = new ArrayList();
     }
 
-    //Getters
-    public int getNumerodeColeccion()
-    {
-        return numeroDeColeccion;
-    }
-
-    public String getNombre()
-    {
-        return nombre;
-    }
 
     //Setters
 
 
-    public void setNumerodeColeccion(int numeroDeColeccion)
-    {
-        this.numeroDeColeccion = numeroDeColeccion;
-    }
-    
-
-    public void setNombre(String nombre)
-    {
-        this.nombre = nombre;
-    }
 
     //Metodos
     public void agregarLibro(Libro libro)
     {
         coleccion.add(libro);
     }
+
+   
 
 
     

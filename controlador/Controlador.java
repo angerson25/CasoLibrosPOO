@@ -26,6 +26,7 @@ public class Controlador implements ActionListener
         this.miVentana = pMiVentana;
         this.miLibro = pMiLibro;
         this.miVentana.miPanelEntradaDatos.agregarOyentesBotones(this);
+        this.miColeccion = new Coleccion();
     }
     
     @Override
@@ -35,6 +36,7 @@ public class Controlador implements ActionListener
 
         if(comando.equals("Agregar"))
         {   
+            
             miLibro.setTitulo(miVentana.miPanelEntradaDatos.getTitulo());
             miLibro.setAutor(miVentana.miPanelEntradaDatos.getAutor());
             miLibro.setAnioEdicion(miVentana.miPanelEntradaDatos.getAnioEdicion());
@@ -47,6 +49,8 @@ public class Controlador implements ActionListener
 
             
             miColeccion.agregarLibro(miLibro);
+            miVentana.miPanelEntradaDatos.limpiar();
+            
         }
         
         if(comando.equals("Limpiar"))
